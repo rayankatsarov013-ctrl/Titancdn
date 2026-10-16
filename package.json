@@ -1,0 +1,32 @@
+{
+  "name": "titancdn-server",
+  "version": "2.0.0",
+  "private": true,
+  "description": "TitanCDN hardened Node.js API server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "build": "echo \"no build step\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcryptjs": "^3.0.2",
+    "cheerio": "^1.2.0",
+    "disposable-email-domains": "^1.0.62",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.1",
+    "nodemailer": "10.0.16",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "qrcode": "^1.5.4",
+    "stripe": "^18.0.0"
+  }
+}

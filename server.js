@@ -1439,8 +1439,7 @@ app.get("/google1a515c3efc6e5a68.html", (req, res) => res.type("text/plain").sen
 app.get("/*splat", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
 // serve the home page at the root URL
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.html"));
-});
+res.sendFile(path.join(__dirname, 'index.html'));});
 
 
 app.use((err, req, res, next) => {

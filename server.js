@@ -255,7 +255,7 @@ app.use("/api", apiLimiter);
 
 // Front-end lives one folder above server.js. Only these assets are public
 // (serving the whole parent folder would expose server/server.js and package.json).
-const WEB_ROOT = path.join(__dirname, "..");
+const WEB_ROOT = __dirname;
 const staticHandler = express.static(WEB_ROOT, { dotfiles: "deny", index: false, etag: true, maxAge: NODE_ENV === "production" ? "1h" : 0 });
 const PUBLIC_ASSET = /^\/(?:app\.js|index\.html|reset-password\.(?:html|js)|(?:images\/)?[\w.-]+\.(?:png|jpe?g|svg|webp|ico))$/i;
 app.use((req, res, next) => (PUBLIC_ASSET.test(req.path) ? staticHandler(req, res, next) : next()));
@@ -1436,8 +1436,7 @@ form.addEventListener("submit", async e => {
 `;
 app.get("/reset-password.js", (req, res) => res.set("Cache-Control", "no-store").type("application/javascript").send(RESET_PAGE_JS));
 app.get("/google1a515c3efc6e5a68.html", (req, res) => res.type("text/plain").send("google-site-verification: google1a515c3efc6e5a68.html"));
-app.get("/*splat", (req, res) => res.sendFile(path.join(__dirname, "../index.html")));
-// serve the home page at the root URL
+app.get("/*splat", (req, res) => res.sendFile(path.join(__dirname, "index.html")));// serve the home page at the root URL
 app.get("/", (req, res) => {
 res.sendFile(path.join(__dirname, 'index.html'));});
 
